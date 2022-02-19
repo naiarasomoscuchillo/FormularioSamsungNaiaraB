@@ -8,7 +8,6 @@
     <!-- styles -->
 
     <link rel="stylesheet" href="styles.css" as="style"/>
-    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
@@ -18,32 +17,42 @@
         <h1 class="form-title">Formulario Información Alta Telefónica</h1>
 
         <fieldset>
-            <legend>Datos Personales</legend>
-           
+          <legend>Datos Personales</legend>
+          
+          <div>
             <label for="nombre">
               Nombre: 
-              <input type="text" id="nombre" value="" maxlength="30">
             </label>
-            
+            <input type="text" pattern="[A-Za-z]" id="nombre" value="" maxlength="30" class="_validate" data-required data-maxlength>
+          </div>
+
+          <div>
             <label for="apellidos">
               Apellidos: 
-              <input type="text" id="apellidos" value="" maxlength="60">
             </label>
+            <input type="text" pattern="[A-Za-z]" id="apellidos" value="" maxlength="60" class="_validate" data-required >
+          </div>
 
+          <div>
             <label for="dirección">
               Dirección: 
-              <input type="text" id="dirección" value="">
             </label>
+            <input type="text" id="dirección" value="" class="_validate" data-required>
+          </div>
 
+          <div>
             <label for="zip">
               Código Postal: 
-              <input type="text" id="zip" value="">
             </label>
+            <input type="text" pattern="[0-9]+" id="zip" value="" minlength="5" maxlength="5" class="_validate" data-required data-postal-code>
+          </div>
 
+          <div>
             <label for="provincia">
-              Provicina: 
-              <input type="text" id="provincia" value="">
+              Provincia: 
             </label>
+            <input type="text" id="provincia" value="" placeholder="(Sin tildes ni eñes)" class="_validate" data-required data-province>
+          <div>
         </fieldset>
 
         <fieldset>
@@ -124,7 +133,7 @@
             <span class="score-range"><input type="range" min="1" max="4" step="1" value="1" class="statistics__bar" id="statistics__bar"> Valoración [1-4]</span>
             <label for="fecha">
               Fecha de la Encuesta: 
-              <input type="search" id="fecha" value="01/01/2019" placeholder="01/01/2019">
+              <input type="date" id="fecha" value="01/01/2019" placeholder="01/01/2019">
               Valoración [1-4]
             </label>
         </fieldset>
@@ -141,5 +150,7 @@
         </div>
     </form>
     </section>
+    <script type="text/javascript" src="validation.js"></script>
+
   </body>
 </html>

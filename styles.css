@@ -9,6 +9,7 @@
     --red:#FC0F21;
     --yellow:#FCFD38;
     --pink:#FEBFCB;
+    --green:rgb(85, 255, 0);
 }
 
 form {
@@ -40,6 +41,13 @@ input {
     background-color:var(--yellow);  
     border:1px solid var(--gray);
     border-radius:5px;
+    outline: none;
+}
+input.error {
+    border:1px solid var(--red);
+}
+input.valid {
+    border:1px solid var(--green);
 }
 
 .contract__types span {
