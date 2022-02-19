@@ -1,0 +1,97 @@
+:root {
+    --white:#ffffff;
+    --black:#000000;
+    --gray:#7D7D7D;
+    --light-gray:rgb(222, 218, 218);
+
+    --dark-blue:#0E24EF;
+    --light-blue:#2DFAFD;
+    --red:#FC0F21;
+    --yellow:#FCFD38;
+    --pink:#FEBFCB;
+}
+
+form {
+    margin:1em;
+}
+fieldset {
+    margin-top:1em;
+}
+.form-title {
+    text-align:center;
+    color:var(--dark-blue);
+    text-shadow: 2px 2px var(--yellow);
+}
+
+legend {
+    background-color:var(--red);
+    color:var(--white);
+}
+
+fieldset {
+    background-color:var(--light-blue);
+    display:flex;
+    flex-direction:column;
+    border-radius:5px;
+    border:none;
+}
+
+input {
+    background-color:var(--yellow);  
+    border:1px solid var(--gray);
+    border-radius:5px;
+}
+
+.contract__types span {
+    margin-right:1em;
+}
+
+#current-company {
+    width:13.5em;
+    margin-right:1em;
+}
+
+.statistics__types {
+    display:flex;
+    flex-direction:column;
+}
+
+.contract__options {
+    margin-top:1em;
+}
+
+.score-range {
+    display:flex;
+    align-items:center;
+}
+input[type='range'] {
+    -webkit-appearance: none;
+    margin:2em .5em 2.5em 0;
+    border:none;
+    background:var(--light-gray);
+    height:2px;
+}
+input[type='range']::-webkit-slider-runnable-track {
+    height: 3px;
+    -webkit-appearance: none;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 11px;
+    height: 20px;
+    cursor: pointer;
+    background: #137ADB;
+    margin-top: -6px;
+    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+    transform:rotate(180deg);
+}
+#fecha {
+    background-color:var(--white);
+}
+button[type='button'] {
+    background:var(--pink);
+    text-align:center;
+    border:none;
+    border-radius:2px;
+    min-width:8em;
+}
