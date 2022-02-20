@@ -8,12 +8,13 @@
     <!-- styles -->
 
     <link rel="stylesheet" href="styles.css" as="style"/>
+    
   </head>
 
   <body>
     <section>
     <!-- form por aqui -->
-    <form>
+    <form method="post" id="form">
         <h1 class="form-title">Formulario Información Alta Telefónica</h1>
 
         <fieldset>
@@ -23,14 +24,16 @@
             <label for="nombre">
               Nombre: 
             </label>
-            <input type="text" pattern="[A-Za-z]" id="nombre" value="" maxlength="30" class="_validate" data-required data-maxlength>
+            <input type="text" id="nombre" value="" maxlength="30" class="_validate" data-required data-maxlength>
+            <span></span>
           </div>
 
           <div>
             <label for="apellidos">
               Apellidos: 
             </label>
-            <input type="text" pattern="[A-Za-z]" id="apellidos" value="" maxlength="60" class="_validate" data-required >
+            <input type="text" id="apellidos" value="" maxlength="60" class="_validate" data-required>
+            <span></span>
           </div>
 
           <div>
@@ -38,6 +41,7 @@
               Dirección: 
             </label>
             <input type="text" id="dirección" value="" class="_validate" data-required>
+            <span></span>
           </div>
 
           <div>
@@ -45,6 +49,7 @@
               Código Postal: 
             </label>
             <input type="text" pattern="[0-9]+" id="zip" value="" minlength="5" maxlength="5" class="_validate" data-required data-postal-code>
+            <span></span>
           </div>
 
           <div>
@@ -52,13 +57,14 @@
               Provincia: 
             </label>
             <input type="text" id="provincia" value="" placeholder="(Sin tildes ni eñes)" class="_validate" data-required data-province>
+            <span></span>
           <div>
         </fieldset>
 
         <fieldset>
           <legend>Tipo de Contratación</legend>
           
-          <div class="contract__types">
+          <div class="contract__types" data-required>
             <span><input type="radio" name="contratacion" value="0">Nueva Contratación</span>
             <span><input type="radio" name="contratacion" value="1">Portabilidad</span>
             <span><input type="radio" name="contratacion" value="2">Cambio de Contrato</span>
@@ -88,36 +94,59 @@
         <fieldset>
             <legend>Datos Bancarios</legend>
 
-            <label for="pais">
-              País: 
+            <div>
+              <label for="pais">
+                País: 
+              </label>
               <input type="text" id="pais" value="ES" readonly>
+              <span></span>
               (sólo válido ES)
-            </label>
-            <label for="iban">
-              Control IBAN: 
-              <input type="text" id="iban" value="" placeholder="XX" maxlength="2">
+            </div>
+
+            <div>
+              <label for="iban">
+                Control IBAN: 
+              </label>
+              <input type="text" id="iban" value="" placeholder="XX" maxlength="2" pattern="[0-9]+" class="_validate" data-required data-number>
+              <span></span>
               (dos dígitos)
-            </label>
-            <label for="entidad">
-              Entidad: 
-              <input type="text" id="entidad" value="" placeholder="XXXX" maxlength="4">
+            </div>
+
+            <div>
+              <label for="entidad">
+                Entidad: 
+              </label>
+              <input type="text" id="entidad" value="" placeholder="XXXX" maxlength="4" pattern="[0-9]+" class="_validate" data-required data-number>
+              <span></span>
               (cuatro dígitos)
-            </label>
-            <label for="sucursal">
-              Sucursal: 
-              <input type="text" id="sucursal" value="" placeholder="XXXX" maxlength="4">
+            </div>
+
+            <div>
+              <label for="sucursal">
+                Sucursal: 
+              </label>
+              <input type="text" id="sucursal" value="" placeholder="XXXX" maxlength="4" pattern="[0-9]+" class="_validate" data-required data-number>
+              <span></span>
               (cuatro dígitos)
-            </label>
-            <label for="dc">
-              DC: 
-              <input type="text" id="dc" value="" placeholder="XX" maxlength="2">
+            </div>
+
+            <div>
+              <label for="dc">
+                DC: 
+              </label>
+              <input type="text" id="dc" value="" placeholder="XX" maxlength="2" pattern="[0-9]+" class="_validate" data-required data-number>
+              <span></span>
               (dos dígitos)
-            </label>
-            <label for="cuenta">
-              Cuenta: 
-              <input type="text" id="cuenta" value="" placeholder="XXXXXXXXXX" maxlength="10">
+            </div>
+
+            <div>
+              <label for="cuenta">
+                Cuenta: 
+              </label>
+              <input type="text" id="cuenta" value="" placeholder="XXXXXXXXXX" maxlength="10" pattern="[0-9]+" class="_validate" data-required data-number>
+              <span></span>
               (diez dígitos)
-            </label>
+            </div>
         </fieldset>
 
         <fieldset>
@@ -146,11 +175,12 @@
         <div class="show__buttons">
           <button type="button" onclick="infoValoracion()">Mostrar<br>Valoración</button>
           <button type="button" onclick="cuentaBancaria()">Mostrar<br>Cuenta</button>
-          <button type="button" onclick="dateName(dia, mes, año)">Mostrar Dia<br>Semana</button>
+          <button type="button" onclick="getDay()">Mostrar Dia<br>Semana</button>
         </div>
     </form>
     </section>
     <script type="text/javascript" src="validation.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 
   </body>
 </html>
